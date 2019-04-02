@@ -163,11 +163,17 @@ done
 
 echo "Starting brew app install..."
 
+### PErsonal
+brew cask install 1password
+brew cask install 1password-cli
+
 ### Developer Tools
 brew cask install iterm2
 brew cask install dash
 brew install ispell
 
+### Data Science
+brew cask install 
 
 ### Development
 brew cask install docker
@@ -263,6 +269,11 @@ brew cask install signal
 # brew cask install marshallofsound-google-play-music-player
 brew cask install vlc
 
+### HAcker
+brew install aircrack-ng
+brew install wifi-password
+brew install speedtest-cli
+
 
 ### Run Brew Cleanup
 brew cleanup
@@ -319,7 +330,7 @@ then
 
 	# Personal 
 	mas install 1446580517 # Noted - voice recorder 
-	mas install 1333542190 # 1password 7
+	mas install 485812721 # TweetDeck
 
 	# Work
   mas install 1295203466 # Microsoft Remote Desktop
@@ -331,6 +342,8 @@ then
 	mas install 441258766 # Magnet
 	mas install 1191449274 # ToothFairy
 
+	# Data Science
+	mas install 1167193104 # CSView
 
 else
 	cecho "App Store login not complete. Skipping installing App Store Apps" $red
