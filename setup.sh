@@ -9,8 +9,11 @@
 
 echo "I  ❤️  🍎"
 echo "Mac OS Install Setup Script"
-echo "By Nina Zakharenko"
-echo "Follow me on twitter! https://twitter.com/nnja"
+echo "By Nutchanon Ninyawee (CircleOnCircles)"
+echo "Follow me on twitter @CircleOnCircles"
+
+# a fork By Nina Zakharenko
+# Follow me on twitter! https://twitter.com/nnja
 
 # Some configs reused from:
 # https://github.com/ruyadorno/installme-osx/
@@ -160,17 +163,6 @@ done
 
 echo "Starting brew app install..."
 
-### Window Management
-# Todo: Try Divvy and spectacles in the future
-brew cask install sizeup  # window manager
-
-# Start SizeUp at login
-defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
-
-# Don’t show the preferences window on next start
-defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
-
-
 ### Developer Tools
 brew cask install iterm2
 brew cask install dash
@@ -199,11 +191,12 @@ brew install less
 ### Python
 brew install python
 brew install pyenv
-
+brew install pipenv
+# TODO: add poetry https://github.com/sdispater/poetry
 
 ### Microcontrollers & Electronics
-brew install avrdude
-brew cask install arduino
+# brew install avrdude
+# brew cask install arduino
 # Manually install teensyduino from:
 # https://www.pjrc.com/teensy/td_download.html
 
@@ -212,14 +205,14 @@ brew cask install arduino
 brew cask install visual-studio-code
 brew cask install pycharm
 ### spacemacs github.com/syl20bnr/spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-brew tap d12frosted/emacs-plus
-brew install emacs-plus --HEAD --with-natural-title-bars
-brew linkapps emacs-plus
+# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# brew tap d12frosted/emacs-plus
+# brew install emacs-plus --HEAD --with-natural-title-bars
+# brew linkapps emacs-plus
 
 
 ### Writing
-brew cask install evernote
+# brew cask install evernote
 brew cask install macdown
 brew cask install notion
 
@@ -227,7 +220,7 @@ brew cask install notion
 ### Conferences, Blogging, Screencasts
 brew cask install deckset
 brew cask install ImageOptim  # for optimizing images
-brew cask install screenflow
+# brew cask install screenflow # Not Buy Yet
 
 
 ### Productivity
@@ -236,17 +229,17 @@ brew cask install google-chrome
 brew cask install alfred
 brew cask install dropbox
 
-brew cask install timing  # time and project tracker
+# brew cask install timing  # time and project tracker
 brew cask install keycastr  # show key presses on screen (for gifs & screencasts)
-brew cask install betterzip
-brew cask install caffeine  # keep computer from sleeping
+# brew cask install betterzip
+# brew cask install caffeine  # keep computer from sleeping
 brew cask install skitch  # app to annotate screenshots
 brew cask install muzzle
 brew cask install flux
 
 
 ### Keyboard & Mouse
-brew cask install karabiner-elements  # remap keys, emacs shortcuts
+# brew cask install karabiner-elements  # remap keys, emacs shortcuts
 brew cask install scroll-reverser  # allow natural scroll for trackpad, not for mouse
 
 
@@ -260,14 +253,14 @@ brew cask install quicklook-csv  # preview csvs
 
 
 ### Chat / Video Conference
-brew cask install slack
+# brew cask install slack
 brew cask install microsoft-teams
 brew cask install zoomus
 brew cask install signal
 
 
 ### Music and Video
-brew cask install marshallofsound-google-play-music-player
+# brew cask install marshallofsound-google-play-music-player
 brew cask install vlc
 
 
@@ -310,11 +303,35 @@ echo "Is app store login complete.(y/n)? "
 read response
 if [ "$response" != "${response#[Yy]}" ]
 then
-	mas install 907364780  # Tomato One - Pomodoro timer
-	mas install 485812721  # Tweetdeck
-	mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
+  # Office
+	mas install 409183694 # Keynote
+	mas install 409201541 # Pages
+	mas install 409203825 # Numbers
+	mas install 462054704 # MS. Word
+	mas install 462058435 # MS. Excel
+	mas install 462062816 # MS. PowerPoint
+
+	# Media
+	mas install 682658836 # GarageBand
+	mas install 408981434 # iMovie
 	mas install 1351639930 # Gifski, convert videos to gifs
-	mas install 414030210  # Limechat, IRC app.
+	mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
+
+	# Personal 
+	mas install 1446580517 # Noted - voice recorder 
+	mas install 1333542190 # 1password 7
+
+	# Work
+  mas install 1295203466 # Microsoft Remote Desktop
+	mas install 497799835 # Xcode
+	mas install 803453959 # Slack
+
+	# Utilities
+	mas install 1116599239 # NordVPN IKE
+	mas install 441258766 # Magnet
+	mas install 1191449274 # ToothFairy
+
+
 else
 	cecho "App Store login not complete. Skipping installing App Store Apps" $red
 fi
