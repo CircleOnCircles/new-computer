@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #############################################
 ### Set OSX Preferences - Borrowed from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 #############################################
@@ -34,6 +36,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide -bool true
 
 # Only Show Open Applications In The Dock  
+# ?
 defaults write com.apple.dock static-only -bool true
 
 # Display full POSIX path as Finder window title
@@ -66,17 +69,18 @@ defaults write com.apple.dock autohide -bool true
 #    defaults write com.apple.dock show-recents -bool false
 
 # Menu bar: hide the Time Machine, User icons, but show the volume Icon.
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-	defaults write "${domain}" dontAutoLoad -array \
-		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-		"/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+# > I prefer bartender from setapp
+# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+# 	defaults write "${domain}" dontAutoLoad -array \
+# 		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+# 		"/System/Library/CoreServices/Menu Extras/User.menu"
+# done
+# defaults write com.apple.systemuiserver menuExtras -array \
+# 	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 ##################
 ### Text Editing / Keyboards
@@ -90,7 +94,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Use function F1, F, etc keys as standard function keys
-defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+# defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
 
 ###############################################################################
