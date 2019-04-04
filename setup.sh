@@ -14,7 +14,6 @@ echo "Follow me on twitter @CircleOnCircles"
 
 # a fork By Nina Zakharenko
 # Follow me on twitter! https://twitter.com/nnja
-
 # Some configs reused from:
 # https://github.com/ruyadorno/installme-osx/
 # https://gist.github.com/millermedeiros/6615994
@@ -84,6 +83,10 @@ echo "Starting brew app install..."
 ### Personal
 brew cask install 1password
 brew cask install 1password-cli
+brew cask install daisydisk
+brew cask install parallels
+# brew cask install parallels-toolbox WILL download installer
+# prefer direct download instead
 
 ### Developer Tools
 brew cask install iterm2
@@ -97,8 +100,8 @@ brew cask install orange
 
 ### Development
 brew cask install docker
-brew install postgresql
-brew install redis
+# brew install postgresql
+# brew install redis
 
 
 ### Command line tools - install new ones, update others to latest version
@@ -188,6 +191,8 @@ brew cask install vlc
 brew install aircrack-ng
 brew install wifi-password
 brew install speedtest-cli
+brew install arp-scan
+brew install nmap
 
 
 ### Run Brew Cleanup
@@ -196,7 +201,7 @@ brew cleanup
 
 source font.sh
 
-source mas.sh
+source mas.sh &
 
 
 #############################################
@@ -209,7 +214,7 @@ pip3 install --upgrade pip
 pip3 install --user pylint
 pip3 install --user flake8
 
-source set_macos_preferences.sh
+source set_macos_preferences.sh &
 
 #############################################
 ### Install dotfiles repo, run link script

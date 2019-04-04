@@ -6,13 +6,6 @@ Note, this sets up an extremely opinionated and highly personalized installation
 
 My dotfile repo is currently private, but I plan on creating a public repo before the end of the year.
 
-Some resources borrowed from:
-
-- https://github.com/ruyadorno/installme-osx/
-- https://gist.github.com/millermedeiros/6615994
-- https://gist.github.com/brandonb927/3195465/
-
-
 
 # Manual Configuration
 
@@ -86,9 +79,6 @@ Unchecked:
 * Tap to click: ON
 * Secondary click: ON
 
-**Display**
-
-* Night Shift (flux) -> Schedule -> Sunrise to Sunset
 
 **Security & Privacy**
 
